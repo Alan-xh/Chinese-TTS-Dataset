@@ -26,14 +26,13 @@
 
 | 文件名 | 描述 | 大小 |
 | ------ | ---- | ---- |
-| Chinese Mandarin Proficiency Test.json | 包含普通话水平测试的文本，共计60篇。 | 中 |
-| Chinese Phonological Changes.json | 包含汉语音变现象的文本，涵盖变调、轻声、儿化、啊音变等。 | 中 |
-| Chinese Polyphonic Characters.json | 包含多音字的文本，基于字频语料库的统计。 | 中 |
-| Mixed Chinese and English Text.json | 包含中英混杂文本，基于Google万亿字语料库的n-gram频率分析。 | 中 |
-| Special Symbols and Numbers.json | 包含电话号码、度量单位、货币单位、时间日期、数学符号等特殊符号文本。 | 中 |
-| TTS_Test.json | 从以上5部分抽取的1万字测试集。 | 小 |
-| TTS_Test.txt | 包含TTS_Test.json文件中的文本内容。 | 小 |
-
+| [Chinese Mandarin Proficiency Test.json](./Chinese%20Mandarin%20Proficiency%20Test.json) | 包括来自普通话朗读作品的文本，共计60篇，来源于普通话学习网，用于综合检测TTS系统在标准普通话中的表现，包括发音准确性、语调自然度、节奏韵律等。总句子数1013句，总字数31899字，平均句长31.49字。 | 中 |
+| [Chinese Phonological Changes.json](./Chinese%20Phonological%20Changes.json) | 包括变调、轻声、儿化、啊音变等，覆盖汉语绝大多数音变情况，来源于多个版本的现代汉语教材音变归纳总结，用于测试TTS系统在处理语流音变现象时的表现。总句子数683句，总字数17645字，平均句长25.83字。 | 中 |
+| [Chinese Polyphonic Characters.json](./Chinese%20Polyphonic%20Characters.json) | 涵盖每百万字出现10次以上的多音字，基于25亿字字频语料库统计，来源于现汉汉语第7版词典，用于评估TTS系统在处理多音字时的准确性。总句子数402句，总字数10435字，平均句长25.96字。 | 中 |
+| [Mixed Chinese and English Text.json](./Mixed%20Chinese%20and%20English%20Text.json) | 根据单词频率确定的中英混杂文本，基于Google万亿字语料库的n-gram频率分析，来源于中英混杂语料ASRU测试集，用于评估TTS系统在处理中英混杂文本时的表现。总句子数3696句，总字数70717字，平均句长19.13字。 | 大 |
+| [Special Symbols and Numbers.json](./Special%20Symbols%20and%20Numbers.json) | 包括电话号码、度量单位、货币单位、时间日期、数学符号、其他等，来源于GitHub开源语料，用于检测TTS系统在处理特殊符号和数字时的准确性和自然度。总句子数281句，总字数7308字，平均句长26.01字。 | 中 |
+| [TTS_Test.json](./TTS_Test.json) | 从以上5部分抽取的1万字测试集。 | 小 |
+| [TTS_Test.txt](./TTS_Test.txt) | 包含TTS_Test.json文件中的文本内容。 | 小 |
 ## 数据集格式说明
 
 ### TTS_Test.json 格式说明
@@ -60,11 +59,11 @@
 
 | 文件名 | 数据集部分 | 内容 | 来源 | 目的 | 总句子数 | 总字数 | 平均句长（字） |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| **Chinese Mandarin Proficiency Test.json** | 汉语普通话水平测试 | 包括来自普通话朗读作品的文本，共计60篇。 | 普通话学习网 | 综合检测TTS系统在标准普通话中的表现，包括发音准确性、语调自然度、节奏韵律等。通过这一部分，可以发现系统在处理标准普通话时可能存在的发音问题或不自然的语调问题。 | 1013 | 31899 | 31.49 |
-| **Chinese Polyphonic Characters.json** | 汉语多音字 | 涵盖每百万字出现10次以上的多音字，基于字频语料库（25亿字）。 | 现汉汉语第7版词典所有多音字统计，基于25亿字字频排序；进一步用于【大语言模型数据生成】 | 评估TTS系统在处理多音字时的准确性。多音字在汉语中非常常见，错误的发音会严重影响语音的自然度和可理解性。通过测试多音字，可以发现系统在上下文判断和发音预测方面的不足。 | 402 | 10435 | 25.96 |
-| **Chinese Phonological Changes.json** | 汉语音变 | 包括变调、轻声、儿化、啊音变等，覆盖汉语绝大多数音变情况。 | 多个版本的现代汉语教材音变归纳总结；进一步用于【大语言模型数据生成】 | 测试TTS系统在处理语流音变现象时的表现。汉语中的音变现象复杂多样，正确处理这些音变对于生成自然流畅的语音至关重要。这部分测试有助于发现系统在音变处理上的不足，并加以改进。 | 683 | 17645 | 25.83 |
-| **Mixed Chinese and English Text.json** | 中英混杂 | 根据单词频率确定的中英混杂文本，基于Google万亿字语料库的n-gram频率分析。 | 中英混杂语料ASRU测试集（基于Google万亿字语料库的单词词频进行排序） | 评估TTS系统在处理中英混杂文本时的表现。现代汉语中常常混杂使用英文单词，系统需要能够准确处理和发音这些混杂的文本，确保在不同语言之间的切换自然流畅。 | 3696 | 70717 | 19.13 |
-| **Special Symbols and Numbers.json** | 特殊符号及数字 | 包括电话号码、度量单位、货币单位、时间日期、数学符号、其他等。 | GitHub开源语料；进一步用于【大语言模型数据生成】 | 检测TTS系统在处理特殊符号和数字时的准确性和自然度。特别是对于应用场景中经常出现的数字和符号，系统需要能够正确识别和发音。这部分测试可以帮助发现和纠正系统在处理非文本内容时的潜在问题。 | 281 | 7308 | 26.01 |
+| **[Chinese Mandarin Proficiency Test.json](./Chinese%20Mandarin%20Proficiency%20Test.json)** | 汉语普通话水平测试 | 包括来自普通话朗读作品的文本，共计60篇。 | 普通话学习网 | 综合检测TTS系统在标准普通话中的表现，包括发音准确性、语调自然度、节奏韵律等。通过这一部分，可以发现系统在处理标准普通话时可能存在的发音问题或不自然的语调问题。 | 1013 | 31899 | 31.49 |
+| **[Chinese Polyphonic Characters.json](./Chinese%20Polyphonic%20Characters.json)** | 汉语多音字 | 涵盖每百万字出现10次以上的多音字，基于字频语料库（25亿字）。 | 现汉汉语第7版词典所有多音字统计，基于25亿字字频排序；进一步用于【大语言模型数据生成】 | 评估TTS系统在处理多音字时的准确性。多音字在汉语中非常常见，错误的发音会严重影响语音的自然度和可理解性。通过测试多音字，可以发现系统在上下文判断和发音预测方面的不足。 | 402 | 10435 | 25.96 |
+| **[Chinese Phonological Changes.json](./Chinese%20Phonological%20Changes.json)** | 汉语音变 | 包括变调、轻声、儿化、啊音变等，覆盖汉语绝大多数音变情况。 | 多个版本的现代汉语教材音变归纳总结；进一步用于【大语言模型数据生成】 | 测试TTS系统在处理语流音变现象时的表现。汉语中的音变现象复杂多样，正确处理这些音变对于生成自然流畅的语音至关重要。这部分测试有助于发现系统在音变处理上的不足，并加以改进。 | 683 | 17645 | 25.83 |
+| **[Mixed Chinese and English Text.json](./Mixed%20Chinese%20and%20English%20Text.json)** | 中英混杂 | 根据单词频率确定的中英混杂文本，基于Google万亿字语料库的n-gram频率分析。 | 中英混杂语料ASRU测试集（基于Google万亿字语料库的单词词频进行排序） | 评估TTS系统在处理中英混杂文本时的表现。现代汉语中常常混杂使用英文单词，系统需要能够准确处理和发音这些混杂的文本，确保在不同语言之间的切换自然流畅。 | 3696 | 70717 | 19.13 |
+| **[Special Symbols and Numbers.json](./Special%20Symbols%20and%20Numbers.json)** | 特殊符号及数字 | 包括电话号码、度量单位、货币单位、时间日期、数学符号、其他等。 | GitHub开源语料；进一步用于【大语言模型数据生成】 | 检测TTS系统在处理特殊符号和数字时的准确性和自然度。特别是对于应用场景中经常出现的数字和符号，系统需要能够正确识别和发音。这部分测试可以帮助发现和纠正系统在处理非文本内容时的潜在问题。 | 281 | 7308 | 26.01 |
 
 ## 数据集优势
 
@@ -77,7 +76,7 @@
 4. **均衡的数据分布**：数据集在构建过程中采用随机、分类和频率等逻辑筛选，确保数据分布均衡且全面，最大化测试覆盖率。
 
 ## 数据集构建流程
-![Chinese TTS Test Set (Polyphonic Characters) Construction Process](https://github.com/danielwei0214/Chinese-TTS-Dataset/blob/main/Chinese%20TTS%20Test%20Set%20(Polyphonic%20Characters)%20Construction%20Process.png)
+![Chinese TTS Test Set (Polyphonic Characters) Construction Process](./Chinese%20TTS%20Test%20Set%20(Polyphonic%20Characters)%20Construction%20Process.png)
 
 
 ### 大模型数据生成prompt
