@@ -1,0 +1,15 @@
+[project]
+name = "chinese-tts-dataset"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "alan_xh", email = "alan_xh163@163.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "pypinyin>=0.55.0",
+]
+
+[[tool.uv.index]]
+url = "https://mirrors.aliyun.com/pypi/simple"
